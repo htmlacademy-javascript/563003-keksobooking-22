@@ -1,21 +1,19 @@
-const getRandomValue = function (min, max) {
-  if(min >= 0 && max > min) {
-    return (Math.random(min, max));
+const getRandomInt = function (min, max) {
+  if(min >= max) {
+    throw new Error
   }
-  if (min > max || min == max){
-    console.log('Число ' + max + ' должено быть больше ,чем ' + min) ;
-  }
+  return Math.floor(Math.random() * (max - min) + min);
 }
-getRandomValue(1, 10);
+getRandomInt();
 
 
-
-const getRandomValueTask = function (min, max, number) {
-  if(min >= 0 && max > min) {
-    return Math.toFixed(number)(Math.random(min, max));
+const getRandomInterger = function (min, max, number) {
+  if(min >= max) {
+    throw new Error
   }
-  if (min > max || min == max) {
-    console.log('Число ' + max + ' должено быть больше ,чем ' + min) ;
-  }
+  const sumRandom = Math.random() * (max - min) + min;
+  const sumGood =  sumRandom.toFixed(number);
+  return Number(sumGood);
 }
-getRandomValueTask(1, 10, 1);
+getRandomInterger();
+
